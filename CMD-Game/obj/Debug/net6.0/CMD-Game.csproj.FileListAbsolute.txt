@@ -1,0 +1,15 @@
+C:\Users\ricar\RiderProjects\CMD-Game\CMD-Game\obj\Debug\net6.0\CMD-Game.csproj.AssemblyReference.cache
+C:\Users\ricar\RiderProjects\CMD-Game\CMD-Game\obj\Debug\net6.0\CMD-Game.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ricar\RiderProjects\CMD-Game\CMD-Game\obj\Debug\net6.0\CMD-Game.AssemblyInfoInputs.cache
+C:\Users\ricar\RiderProjects\CMD-Game\CMD-Game\obj\Debug\net6.0\CMD-Game.AssemblyInfo.cs
+C:\Users\ricar\RiderProjects\CMD-Game\CMD-Game\obj\Debug\net6.0\CMD-Game.csproj.CoreCompileInputs.cache
+C:\Users\ricar\RiderProjects\CMD-Game\CMD-Game\bin\Debug\net6.0\CMD-Game.exe
+C:\Users\ricar\RiderProjects\CMD-Game\CMD-Game\bin\Debug\net6.0\CMD-Game.deps.json
+C:\Users\ricar\RiderProjects\CMD-Game\CMD-Game\bin\Debug\net6.0\CMD-Game.runtimeconfig.json
+C:\Users\ricar\RiderProjects\CMD-Game\CMD-Game\bin\Debug\net6.0\CMD-Game.dll
+C:\Users\ricar\RiderProjects\CMD-Game\CMD-Game\bin\Debug\net6.0\ref\CMD-Game.dll
+C:\Users\ricar\RiderProjects\CMD-Game\CMD-Game\bin\Debug\net6.0\CMD-Game.pdb
+C:\Users\ricar\RiderProjects\CMD-Game\CMD-Game\obj\Debug\net6.0\CMD-Game.dll
+C:\Users\ricar\RiderProjects\CMD-Game\CMD-Game\obj\Debug\net6.0\ref\CMD-Game.dll
+C:\Users\ricar\RiderProjects\CMD-Game\CMD-Game\obj\Debug\net6.0\CMD-Game.pdb
+C:\Users\ricar\RiderProjects\CMD-Game\CMD-Game\obj\Debug\net6.0\CMD-Game.genruntimeconfig.cache
