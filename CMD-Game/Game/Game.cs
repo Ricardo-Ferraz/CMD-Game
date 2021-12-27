@@ -12,14 +12,16 @@ public class Game
         this.Board = new Board();
         this.Hero = new Hero();
         this.Board.ChangeField(this.Hero.Row, this.Hero.Column, "H");
-
-        while (true)
+        
+        do
         {
             Console.WriteLine();
             this.DisplayBoard();
             Console.WriteLine();
             this.HeroTurn();
-        }
+        } while (this.Hero.Hp != 0 && !(this.Board.HeroResearch(this.Hero.Row, this.Hero.Column)));
+        Console.WriteLine();
+        this.DisplayBoard();
     }
 
     public void HeroTurn()

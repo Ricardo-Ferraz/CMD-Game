@@ -9,11 +9,11 @@ public class Hero
     private static readonly int INITIAL_COLUMN = 0;
     
     
-    private int Hp { get; set; }
+    public int Hp { get; set; }
 
-    private int Damage { get; set; }
+    public int Damage { get; set; }
     
-    private int Score { get; set; }
+    public int Score { get; set; }
 
     public int Row { get; set; }
     

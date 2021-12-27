@@ -22,6 +22,8 @@ public class Board
                 this.fields[i, j] = CHARACTER_DISPLAY;
             }
         }
+
+        this.fields[this.fields.GetLength(0) - 1, this.fields.GetLength(0) - 1] = "D";
     }
 
     public void ChangeField(int row, int column, String change)
@@ -54,7 +56,7 @@ public class Board
                         break;
                     
                     case "D":
-                        Console.ForegroundColor = ConsoleColor.Blue; 
+                        Console.ForegroundColor = ConsoleColor.DarkBlue; 
                         break;
                 }
                 Console.Write(this.fields[i,j]+ " ");
@@ -77,4 +79,14 @@ public class Board
         }
     }
 
+    public bool HeroResearch(int row, int column)
+    {
+        
+        if (row == this.fields.GetLength(0) - 1 && column == this.fields.GetLength(0) - 1)
+        {
+            return true;
+        }
+
+        return false;
+    }
 }
