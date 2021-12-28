@@ -2,7 +2,7 @@
 
 public class Hero
 {
-    private static readonly int INITIAL_HP = 25;
+    public static readonly int INITIAL_HP = 25;
     private static readonly int INITIAL_DAMAGE = 1;
     private static readonly int INITIAL_SCORE = 0;
     private static readonly int INITIAL_ROW = 0;
@@ -19,6 +19,7 @@ public class Hero
     
     public int Column { get; set; }
 
+    
     public void IncreaseDamage(int damage)
     {
         this.Damage += damage;

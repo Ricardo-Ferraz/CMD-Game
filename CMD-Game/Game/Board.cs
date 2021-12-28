@@ -71,12 +71,26 @@ public class Board
         try
         {
             string a= this.fields[row, column];
+            if (a.Equals("B") || a.Equals("M"))
+            {
+                return false;
+            }
             return true;
         }
         catch (Exception e)
         {
             return false;
         }
+    }
+
+    public bool IsPotion(int row, int column)
+    {
+        if (this.fields[row, column].Equals("P"))
+        {
+            return true;
+        }
+
+        return false;
     }
 
     public bool HeroResearch(int row, int column)
@@ -88,5 +102,10 @@ public class Board
         }
 
         return false;
+    }
+
+    public String GetField(int row, int column)
+    {
+        return this.fields[row, column];
     }
 }
