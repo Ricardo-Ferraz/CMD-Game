@@ -9,14 +9,15 @@ public class Game
     private static readonly int NUMBER_POTIONS = 8;
     public Board Board { get; set; }
     public Hero Hero { get; set; }
+    
 
     public Game()
     {
         this.Board = new Board();
         this.Hero = new Hero();
         this.Board.ChangeField(this.Hero.Row, this.Hero.Column, "H");
-        InitializatePotion();
-
+        this.InitializatePotion();
+        this.InitializateWeapon();
         do
         {
             Console.WriteLine();
@@ -54,6 +55,10 @@ public class Game
                             this.Hero.Hp = Hero.INITIAL_HP;
                         }
                     }
+                    else if (this.Board.IsWeapon(this.Hero.Row, this.Hero.Column - 1))
+                    {
+                        this.Hero.Damage++;
+                    }
                     this.Board.ChangeField(this.Hero.Row, this.Hero.Column, "O");
                     this.Hero.Column -= 1;
                     this.Board.ChangeField(this.Hero.Row, this.Hero.Column, "H");
@@ -67,12 +72,15 @@ public class Game
                 {
                     if (this.Board.IsPotion(this.Hero.Row+1, this.Hero.Column))
                     {
-                        
                         this.Hero.Hp += POTION_RECOVERY;
                         if (this.Hero.Hp > Hero.INITIAL_HP)
                         {
                             this.Hero.Hp = Hero.INITIAL_HP;
                         }
+                    }
+                    else if (this.Board.IsWeapon(this.Hero.Row+1, this.Hero.Column))
+                    {
+                        this.Hero.Damage++;
                     }
                     this.Board.ChangeField(this.Hero.Row, this.Hero.Column, "O");
                     this.Hero.Row += 1;
@@ -94,6 +102,10 @@ public class Game
                             this.Hero.Hp = Hero.INITIAL_HP;
                         }
                     }
+                    else if (this.Board.IsWeapon(this.Hero.Row, this.Hero.Column+1))
+                    {
+                        this.Hero.Damage++;
+                    }
                     this.Board.ChangeField(this.Hero.Row, this.Hero.Column, "O");
                     this.Hero.Column += 1;
                     this.Board.ChangeField(this.Hero.Row, this.Hero.Column, "H");
@@ -112,6 +124,10 @@ public class Game
                         {
                             this.Hero.Hp = Hero.INITIAL_HP;
                         }
+                    }
+                    else if (this.Board.IsWeapon(this.Hero.Row-1, this.Hero.Column))
+                    {
+                        this.Hero.Damage++;
                     }
                     this.Board.ChangeField(this.Hero.Row, this.Hero.Column, "O");
                     this.Hero.Row -= 1;
@@ -133,16 +149,16 @@ public class Game
     
     private void DisplayBoard()
     {
-        Console.WriteLine("==============================");
+        Console.WriteLine("================================================");
         Console.WriteLine("Hero HP: "+this.Hero.Hp+ " Hero Damage: "+this.Hero.Damage+ " Hero Score: "+this.Hero.Score);
-        Console.WriteLine("==============================");
+        Console.WriteLine("================================================");
         this.Board.DisplayBoard();
         Console.WriteLine();
-        Console.WriteLine("==============================");
+        Console.WriteLine("================================================");
         Console.WriteLine("[A] to move left.     [D] to move right.");
         Console.WriteLine("[W] to move up.       [S] to move down.");
         Console.WriteLine("[SPACE] to attack.    [ESC] to exit.");
-        Console.WriteLine("==============================");
+        Console.WriteLine("================================================");
     }
 
     private void InitializatePotion()
@@ -158,5 +174,18 @@ public class Game
                 this.Board.ChangeField(row, column, "P");
             }
         } while (count < NUMBER_POTIONS);
+    }
+
+    private void InitializateWeapon()
+    {
+        int row = GenerateRandom.GetRandom(0, 20);
+        int column = GenerateRandom.GetRandom(0, 20);
+        while (!this.Board.GetField(row, column).Equals("O"))
+        {
+            row = GenerateRandom.GetRandom(0, 20);
+            column = GenerateRandom.GetRandom(0, 20);
+        }
+        this.Board.ChangeField(row, column, "W");
+       
     }
 }

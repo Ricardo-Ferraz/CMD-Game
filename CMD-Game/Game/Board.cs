@@ -55,6 +55,10 @@ public class Board
                         Console.ForegroundColor = ConsoleColor.Green;
                         break;
                     
+                    case "W":
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        break;
+                    
                     case "D":
                         Console.ForegroundColor = ConsoleColor.DarkBlue; 
                         break;
@@ -85,12 +89,12 @@ public class Board
 
     public bool IsPotion(int row, int column)
     {
-        if (this.fields[row, column].Equals("P"))
-        {
-            return true;
-        }
+        return this.fields[row, column].Equals("P");
+    }
 
-        return false;
+    public bool IsWeapon(int row, int column)
+    {
+        return this.fields[row, column].Equals("W");
     }
 
     public bool HeroResearch(int row, int column)
