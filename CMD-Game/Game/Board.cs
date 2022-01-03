@@ -108,6 +108,70 @@ public class Board
         return false;
     }
 
+    public bool HeroNearby(int row, int column)
+    {
+        if (this.fields[row - 1, column].Any() && this.fields[row - 1, column].Equals("H"))
+        {
+            return true;
+        }
+        else if (this.fields[row + 1, column].Any() && this.fields[row + 1, column].Equals("H"))
+        {
+            return true;
+        }
+        else if (this.fields[row, column + 1].Any() && this.fields[row, column + 1].Equals("H"))
+        {
+            return true;
+        }
+        else if (this.fields[row, column - 1].Any() && this.fields[row, column - 1].Equals("H"))
+        {
+            return true;
+        }
+        return false;
+    }
+    
+    public bool MonsterNearby(int row, int column)
+    {
+        if (this.fields[row - 1, column].Any() && this.fields[row - 1, column].Equals("M"))
+        {
+            return true;
+        }
+        else if (this.fields[row + 1, column].Any() && this.fields[row + 1, column].Equals("M"))
+        {
+            return true;
+        }
+        else if (this.fields[row, column + 1].Any() && this.fields[row, column + 1].Equals("M"))
+        {
+            return true;
+        }
+        else if (this.fields[row, column - 1].Any() && this.fields[row, column - 1].Equals("M"))
+        {
+            return true;
+        }
+        return false;
+    }
+    
+    
+    public bool BossNearby(int row, int column)
+    {
+        if (this.fields[row - 1, column].Any() && this.fields[row - 1, column].Equals("B"))
+        {
+            return true;
+        }
+        else if (this.fields[row + 1, column].Any() && this.fields[row + 1, column].Equals("B"))
+        {
+            return true;
+        }
+        else if (this.fields[row, column + 1].Any() && this.fields[row, column + 1].Equals("B"))
+        {
+            return true;
+        }
+        else if (this.fields[row, column - 1].Any() && this.fields[row, column - 1].Equals("B"))
+        {
+            return true;
+        }
+        return false;
+    }
+    
     public String GetField(int row, int column)
     {
         return this.fields[row, column];

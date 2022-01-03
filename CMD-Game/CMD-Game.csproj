@@ -10,7 +10,6 @@
 
     <ItemGroup>
       <Compile Remove="Main.cs" />
-      <Compile Remove="Model\Base.cs" />
     </ItemGroup>
 
 </Project>
