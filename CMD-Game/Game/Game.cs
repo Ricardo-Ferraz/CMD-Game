@@ -60,6 +60,8 @@ public class Game
         {
             Console.WriteLine("Seu Herói chegou a 0 de vida, você perdeu!");
         }
+
+        this.Hero.Score += this.Hero.Hp;
         Console.WriteLine("Seu Score foi: "+this.Hero.Score);
     }
 
