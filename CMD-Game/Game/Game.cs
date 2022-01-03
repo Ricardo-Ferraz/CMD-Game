@@ -60,6 +60,7 @@ public class Game
         {
             Console.WriteLine("Seu Herói chegou a 0 de vida, você perdeu!");
         }
+        Console.WriteLine("Seu Score foi: "+this.Hero.Score);
     }
 
     private void HeroTurn()
@@ -176,6 +177,7 @@ public class Game
                     if (this.Boss.Hp <= 0)
                     {
                         this.Board.ChangeField(this.Boss.Row, this.Boss.Column, "O");
+                        this.Hero.Score += this.Boss.Score;
                         Console.WriteLine("Boss Derrotado!");
                     }
                 }
@@ -193,6 +195,7 @@ public class Game
                                     if (monster.Hp <= 0)
                                     {
                                         monster.Hp = 0;
+                                        this.Hero.Score = monster.Score;
                                         this.Board.ChangeField(monster.Row, monster.Column, "O");
                                     }
                                 }   
