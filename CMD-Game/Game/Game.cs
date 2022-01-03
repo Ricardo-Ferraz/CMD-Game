@@ -181,25 +181,22 @@ public class Game
                         Console.WriteLine("Boss Derrotado!");
                     }
                 }
-                else
-                {
-                    if (this.Board.MonsterNearby(this.Hero.Row, this.Hero.Column))
-                    {
-                        foreach (var monster in this.Monsters)
-                        {
-                            if (monster.Hp > 0)
-                            {
-                                if (this.Board.HeroNearby(monster.Row, monster.Column))
-                                {
-                                    monster.Hp -= this.Hero.Damage;
-                                    if (monster.Hp <= 0)
-                                    {
-                                        monster.Hp = 0;
-                                        this.Hero.Score = monster.Score;
-                                        this.Board.ChangeField(monster.Row, monster.Column, "O");
-                                    }
-                                }   
-                            }
+                if (this.Board.MonsterNearby(this.Hero.Row, this.Hero.Column)) 
+                { 
+                    foreach (var monster in this.Monsters) 
+                    { 
+                        if (monster.Hp > 0) 
+                        { 
+                            if (this.Board.HeroNearby(monster.Row, monster.Column))
+                            { 
+                                monster.Hp -= this.Hero.Damage; 
+                                if (monster.Hp <= 0)
+                                { 
+                                    monster.Hp = 0; 
+                                    this.Hero.Score += monster.Score; 
+                                    this.Board.ChangeField(monster.Row, monster.Column, "O");
+                                }
+                            }   
                         }
                     }
                 }

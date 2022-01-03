@@ -11,8 +11,8 @@ public abstract class Base
     protected static readonly int INITIAL_BOSS_DAMAGE = 2;
     
     protected static readonly int INITIAL_HERO_SCORE = 0;
-    protected static readonly int INITIAL_MONSTER_SCORE = 1;
-    protected static readonly int INITIAL_BOSS_SCORE = 2;
+    protected static readonly int INITIAL_MONSTER_SCORE = 5;
+    protected static readonly int INITIAL_BOSS_SCORE = 15;
     
     protected static readonly int INITIAL_HERO_ROW = 0;
     protected static readonly int INITIAL_HERO_COLUMN = 0;
